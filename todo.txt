@@ -1,0 +1,2 @@
+- fix refresh /student page 
+- replace sendFile with render so you can pass response.body to UI and use it there.

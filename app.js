@@ -5,7 +5,7 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 var path = require('path');
 
-const CONNECTION_URL = "mongodb+srv://ulan13:Mongoparol2019@contact-form-whqru.mongodb.net/test?retryWrites=true&w=majority"
+const CONNECTION_URL = "mongodb+srv://<username>:<password>@contact-form-whqru.mongodb.net/test?retryWrites=true&w=majority"
 const DATABASE_NAME = "seytech";
 
 var app = Express();
@@ -23,19 +23,24 @@ app.listen(3000, () => {
         }
         database = client.db(DATABASE_NAME);
         collection = database.collection("students-info");
-        console.log("Connected to `" + DATABASE_NAME + "`!");
     });
 });
 
-
-app.post("/student", (request, response) => {
-    console.log(request.body);
-
+app.post("/student", (request, response, next) => {
     collection.insertOne(request.body, (error, result) => {
         if(error) {
             return response.status(500).send(error);
         }
-        response.send(result.result);
+        response.sendFile(path.join(__dirname, './public', 'success.html'), (err) => {
+        if(err) {
+            next(err)
+        } else {
+            console.log("Sent: ", "success page");
+        }
+        });
     });
-    response.sendFile(path.join(__dirname, './public', 'success.html'));
 });
+
+// app.get("/student", (request, response) => {
+//     response.sendFile(path.join(__dirname, './public', 'success.html'));
+// });
