@@ -29,19 +29,13 @@ app.listen(3000, () => {
 
 
 app.post("/student", (request, response) => {
-    collection.insert(request.body, (error, result) => {
+    console.log(request.body);
+
+    collection.insertOne(request.body, (error, result) => {
         if(error) {
             return response.status(500).send(error);
         }
         response.send(result.result);
     });
-});
-
-app.get("/people", (request, response) => {
-    collection.find({}).toArray((error, result) => {
-        if(error) {
-            return response.status(500).send(error);
-        }
-        response.send(result);
-    });
+    response.sendFile(path.join(__dirname, './public', 'success.html'));
 });
