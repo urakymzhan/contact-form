@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Data</title>
+    <style>
+        * { box-sizing: border-box;}
+        body { width: 100%; margin: 0; padding: 0; }
+        #wrapper {
+            width: 30%;
+            text-align: center;
+            margin-top: 4rem;
+            margin-right: calc((100% - 30%) / 2);
+            margin-left: calc((100% - 30%) / 2);
+            position: relative; 
+            padding: 0 0 1rem 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            background-color: #1E8449;
+            padding: 1rem 0;
+            border-radius: 8px;
+        }
+        form { 
+            width: 100%; 
+            font-size: 16px;
+
+        }
+        label {
+            display: block;
+            text-align: left;
+            padding: 1rem 5%;
+        }
+        input {
+            border: none;
+            width: 90%;
+            outline: none;
+        }
+        input[type="submit"] {
+            height: 2rem;
+            border-radius: 8px;
+            cursor: pointer; 
+            background-color: #1E8449;
+            width: 100%; 
+        }
+        input[type="submit"]:hover {
+            color: #fff; 
+        }
+        #fname-div, #lname-div, #email-div { 
+            border: 1px solid #1E8449;
+            border-radius: 8px;
+            margin: 0.4rem 0;
+            padding: 0.4rem 0 0.8rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Contact Information</h1>
+    
+    <form method="POST" action="/student">
+        <div id="fname-div">
+            <label for="fname">First Name *</label>
+            <input type="text" name="first-name" placeholder="First Name" required>
+        </div>
+        <div id="lname-div">
+            <label for="lname">Last Name *</label>
+            <input type="text" name="lname" placeholder="Last Name" required>
+        </div>
+        <div id="email-div">
+            <label for="email">Email *</label>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>
+
+
