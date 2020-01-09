@@ -10,4 +10,6 @@
 > ###### Change CONNECTION_URL according to your settings:
 > CONNECTION_URL = "mongodb+srv://"username":"password"@contact-form-whqru.mongodb.net/test?retryWrites=true&w=majority"
 
+### Live version is served on heroku: https://quiet-badlands-81874.herokuapp.com/
+
 
