@@ -17,8 +17,8 @@ app.use(BodyParser.urlencoded({ extended: true }));
 app.use(Express.static(path.resolve(__dirname, 'public')));
 
 var database, collection;
-
-app.listen(3000, () => {
+// process.env.PORT || is for heroku.
+app.listen(process.env.PORT || 3000, () => {
     MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
