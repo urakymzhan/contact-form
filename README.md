@@ -2,6 +2,7 @@
 ##### contact submission form to Seytech students
 
 ### run the app (from contact-form directory): 
+ $ npm install
  $ node app.js 
 
 ### I used Mongodb Atlas for database:

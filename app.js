@@ -7,7 +7,7 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 var path = require('path');
 
-const CONNECTION_URL = "mongodb+srv://<username>:<password>@contact-form-whqru.mongodb.net/test?retryWrites=true&w=majority"
+const CONNECTION_URL = "mongodb+srv://ulan13:Mongoparol2019@contact-form-whqru.mongodb.net/test?retryWrites=true&w=majority"
 const DATABASE_NAME = "seytech";
 
 var app = Express();
